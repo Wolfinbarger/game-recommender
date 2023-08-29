@@ -9,8 +9,6 @@ Navigate to the api folder and ensure it is empty.
 cd src/app
 ```
 
-Run the following Next.js setup command
-
 Then run the dev server
 
 ```
