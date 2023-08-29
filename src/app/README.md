@@ -11,14 +11,6 @@ cd src/app
 
 Run the following Next.js setup command
 
-```
-yarn create next-app .
-```
-
-Take the following prompts.
-
-![image](img\prompt-instructions.png)
-
 Then run the dev server
 
 ```
