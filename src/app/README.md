@@ -1,5 +1,5 @@
-# Python Documentation
+# React Documentation
 
 ## How to setup
 
-## How to navigate our Python API
+## How to navigate our React App
