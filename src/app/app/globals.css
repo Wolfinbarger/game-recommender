@@ -1,3 +1,22 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+/* TODO: We'll eventually want to move this out of the global CSS file since this can bloat the CSS file in the browser. */
+.layout {
+    display: flex;
+    flex-direction: column;
+    color: white;
+}
+
+.footer {
+    background-color: black;
+}
+
+.body {
+    background-color: #323232;
+}
+
+.header {
+    background-color: black;
+}
