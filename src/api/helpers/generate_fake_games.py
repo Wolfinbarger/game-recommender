@@ -7,8 +7,6 @@ import json
 
 from src.api.models import platforms, multiplayer, game
 
-#from src.api.models import game, platforms, multiplayer
-
 NUM_OF_GAMES_TO_CREATE = 100
 
 fake = Faker()

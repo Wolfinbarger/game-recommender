@@ -1,7 +1,7 @@
 class Multiplayer:
     """
     Args:
-        player_count (int, optional): Number of players available online.
+        player_count (int, optional): Number of players available either local or online.
     Example:
         multiplayer = Multiplayer(player_count=10)
     """

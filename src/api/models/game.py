@@ -1,13 +1,14 @@
-# import platforms
-# import multiplayer
 from src.api.models import platforms, multiplayer
+
 
 class Game:
     """
     Args:
-        title (str): Title of game.
-        description (str, optional): Description of game.
+        title (str)
+        description (str, optional)
         available_platforms (Platform, optional): Platform object that identifies which platforms the game is available on.
+        release_date (str, optional)
+        available_multiplayer (Multiplayer, optional)
     """
 
     def __init__(self, title, description=None, available_platforms=None, release_date=None, available_multiplayer=None):
