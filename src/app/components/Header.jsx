@@ -4,8 +4,10 @@ import logo from "../assets/img/logo.jpg";
 const Header = () => {
   return (
     <>
+    <header>
       <Image src={logo}></Image>
       <h1>I am a header</h1>
+      </header>
     </>
   );
 };
