@@ -21,7 +21,7 @@ export default function RootLayout({ children }) {
           crossorigin="anonymous"
           referrerpolicy="no-referrer"
         />
-        ;{children}
+        {children}
         <Header />
         <Footer />
       </body>
