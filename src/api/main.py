@@ -1,14 +1,17 @@
-from typing import Union
-
 from fastapi import FastAPI
+import json
 
 app = FastAPI()
+
 
 @app.get("/")
 def read_root():
     return "Greetings from the Game Recommender application!"
 
-# Example: http://127.0.0.1:8000/items/5?q=somequery
-@app.get("/items/{item_id}")
-def read_item(item_id: int, q: Union[str, None] = None):
-    return {"item_id": item_id, "q": q}
+
+@app.get("/api/games")
+def get_all_games():
+    # TODO: Switch to using real data when it's available.
+    with open('../../data/fake_games_dataset.json', 'r') as data:
+        decoder = json.JSONDecoder()
+        return decoder.decode(data.read())
