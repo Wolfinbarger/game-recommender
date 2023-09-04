@@ -5,7 +5,7 @@ import Avatar from "./Avatar";
 const Header = () => {
   return (
     <>
-      <header>
+      <header className="h-100">
         <Image src={logo} alt="logo" />
         <h1>I am a header</h1>
         <Avatar />
