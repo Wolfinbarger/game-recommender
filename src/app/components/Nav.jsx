@@ -14,23 +14,23 @@ const Nav = () => {
     <>
       <nav className="h-screen w-1/6 ">
         <Image src={logo} alt="logo" />
-        <button className="text-white border rounded-lg border-white h-12 w-48 items-center flex justify-center align-middle">
+        <button className=" border rounded-lg border-white h-12 w-48 items-center flex justify-center align-middle">
           <FontAwesomeIcon icon={faHouse} style={{ color: "#ffffff" }} />
           <p className="ml-1">Home</p>
         </button>
-        <button className="text-white border rounded-lg border-white h-12 w-48 items-center flex justify-center align-middle">
+        <button className=" border rounded-lg border-white h-12 w-48 items-center flex justify-center align-middle">
           <FontAwesomeIcon
             icon={faMagnifyingGlass}
             style={{ color: "#ffffff" }}
           />
           <p className="ml-1">Search</p>
         </button>
-        <button className="text-white border rounded-lg border-white h-12 w-48 items-center flex justify-center align-middle">
+        <button className="border rounded-lg border-white h-12 w-48 items-center flex justify-center align-middle">
           <FontAwesomeIcon icon={faGamepad} style={{ color: "#ffffff" }} />
 
           <p className="ml-1">My Games</p>
         </button>
-        <button className="text-white border rounded-lg border-white h-12 w-48 items-center flex justify-center align-middle">
+        <button className=" border rounded-lg border-white h-12 w-48 items-center flex justify-center align-middle">
           <FontAwesomeIcon icon={faPen} style={{ color: "#ffffff" }} />
           <p className="ml-1">Wishlist</p>
         </button>

@@ -10,7 +10,6 @@ html {
 footer {
   margin-top: auto;
   height: 100px;
-  color: white;
   align-items: center;
   border-top: 10px solid #0e2954;
   background-color: #252525;
@@ -22,4 +21,6 @@ body {
   min-width: 100%;
   display: flex;
   flex-direction: column;
+  font-size: 1.25rem;
+  color: white;
 }

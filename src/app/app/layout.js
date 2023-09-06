@@ -4,9 +4,13 @@ import Footer from "../components/Footer";
 import Header from "../components/Nav";
 import "@fortawesome/fontawesome-svg-core/styles.css";
 import { config } from "@fortawesome/fontawesome-svg-core";
+import { Roboto } from "next/font/google";
 config.autoAddCss = false;
 
-const inter = Inter({ subsets: ["latin"] });
+const roboto = Roboto({
+  subsets: ["latin"],
+  weight: "500",
+});
 
 export const metadata = {
   title: "Game Recommender",
@@ -15,8 +19,8 @@ export const metadata = {
 
 export default function RootLayout({ children }) {
   return (
-    <html lang="en">
-      <body className={inter.className}>
+    <html lang="en" className={roboto.className}>
+      <body>
         {children}
 
         <Header />
