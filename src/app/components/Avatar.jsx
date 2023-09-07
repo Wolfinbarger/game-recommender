@@ -5,7 +5,7 @@ import React from "react";
 const Avatar = () => {
   return (
     <>
-      <div className="flex flex-row items-center bottom-0">
+      <div className="flex flex-row items-center mb-0 bg-secondary ">
         <div className="bg-white h-10 w-10 rounded-full border-2 border-black flex items-center justify-center text-xl">
           <FontAwesomeIcon icon={faUser} style={{ color: "#000000" }} />
         </div>

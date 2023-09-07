@@ -12,29 +12,32 @@ import {
 const Nav = () => {
   return (
     <>
-      <nav className="h-screen w-1/6 ">
+      <nav className="h-screen w-60 pt-16 pb-0 pl-7 flex-col">
         <Image src={logo} alt="logo" />
-        <button className=" border rounded-lg border-white h-12 w-48 items-center flex justify-center align-middle">
-          <FontAwesomeIcon icon={faHouse} style={{ color: "#ffffff" }} />
-          <p className="ml-1">Home</p>
-        </button>
-        <button className=" border rounded-lg border-white h-12 w-48 items-center flex justify-center align-middle">
-          <FontAwesomeIcon
-            icon={faMagnifyingGlass}
-            style={{ color: "#ffffff" }}
-          />
-          <p className="ml-1">Search</p>
-        </button>
-        <button className="border rounded-lg border-white h-12 w-48 items-center flex justify-center align-middle">
-          <FontAwesomeIcon icon={faGamepad} style={{ color: "#ffffff" }} />
 
-          <p className="ml-1">My Games</p>
-        </button>
-        <button className=" border rounded-lg border-white h-12 w-48 items-center flex justify-center align-middle">
-          <FontAwesomeIcon icon={faPen} style={{ color: "#ffffff" }} />
-          <p className="ml-1">Wishlist</p>
-        </button>
-        <Avatar className="bottom-0" />
+        <div className="mt-12 mb-96">
+          <button className=" border rounded-lg border-white h-12 w-48 items-center flex justify-center align-middle">
+            <FontAwesomeIcon icon={faHouse} style={{ color: "#ffffff" }} />
+            <p className="ml-1">Home</p>
+          </button>
+          <button className=" border rounded-lg border-white h-12 w-48 items-center flex justify-center align-middle">
+            <FontAwesomeIcon
+              icon={faMagnifyingGlass}
+              style={{ color: "#ffffff" }}
+            />
+            <p className="ml-1">Search</p>
+          </button>
+          <button className="border rounded-lg border-white h-12 w-48 items-center flex justify-center align-middle">
+            <FontAwesomeIcon icon={faGamepad} style={{ color: "#ffffff" }} />
+
+            <p className="ml-1">My Games</p>
+          </button>
+          <button className=" border rounded-lg border-white h-12 w-48 items-center flex justify-center align-middle">
+            <FontAwesomeIcon icon={faPen} style={{ color: "#ffffff" }} />
+            <p className="ml-1">Wishlist</p>
+          </button>
+        </div>
+        <Avatar />
       </nav>
     </>
   );

@@ -1,7 +1,7 @@
 import "./globals.css";
 import { Inter } from "next/font/google";
 import Footer from "../components/Footer";
-import Header from "../components/Nav";
+import Nav from "../components/Nav";
 import "@fortawesome/fontawesome-svg-core/styles.css";
 import { config } from "@fortawesome/fontawesome-svg-core";
 import { Roboto } from "next/font/google";
@@ -23,7 +23,7 @@ export default function RootLayout({ children }) {
       <body>
         {children}
 
-        <Header />
+        <Nav />
         <Footer />
       </body>
     </html>
