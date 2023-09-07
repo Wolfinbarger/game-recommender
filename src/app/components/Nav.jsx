@@ -12,10 +12,10 @@ import {
 const Nav = () => {
   return (
     <>
-      <nav className="h-screen w-60 pt-16 pb-0 pl-7 flex-col">
-        <Image src={logo} alt="logo" />
+      <nav className="h-screen w-60 pt-16 pb-0 flex-col">
+        <Image src={logo} alt="logo" className="pl-7" />
 
-        <div className="mt-12 mb-96">
+        <div className="mt-12 mb-96 pl-7">
           <button className=" border rounded-lg border-white h-12 w-48 items-center flex justify-center align-middle">
             <FontAwesomeIcon icon={faHouse} style={{ color: "#ffffff" }} />
             <p className="ml-1">Home</p>
