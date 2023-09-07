@@ -16,7 +16,7 @@ const Nav = () => {
         <Image src={logo} alt="logo" className="pl-7" />
 
         <div className="w-48 mt-12 mb-96 pl-7">
-          <button className=" border rounded-lg border-white h-12 w-48 items-center flex space-x-4 pl-6">
+          <button className=" hover:bg-primary rounded-lg h-12 w-48 items-center flex space-x-4 pl-6">
             <FontAwesomeIcon
               icon={faHouse}
               style={{ color: "#ffffff" }}
@@ -24,7 +24,7 @@ const Nav = () => {
             />
             <p className="">Home</p>
           </button>
-          <button className=" border rounded-lg border-white h-12 w-48 items-center flex space-x-4 pl-6">
+          <button className=" hover:bg-primary rounded-lg h-12 w-48 items-center flex space-x-4 pl-6">
             <FontAwesomeIcon
               icon={faMagnifyingGlass}
               style={{ color: "#ffffff" }}
@@ -32,7 +32,7 @@ const Nav = () => {
             />
             <p className="">Search</p>
           </button>
-          <button className="border rounded-lg border-white h-12 w-48 items-center flex space-x-4 pl-6">
+          <button className="hover:bg-primary rounded-lg h-12 w-48 items-center flex space-x-4 pl-6">
             <FontAwesomeIcon
               icon={faGamepad}
               style={{ color: "#ffffff" }}
@@ -41,7 +41,7 @@ const Nav = () => {
 
             <p className="">My Games</p>
           </button>
-          <button className=" border rounded-lg border-white h-12 w-48 items-center flex space-x-4 pl-6">
+          <button className=" hover:bg-primary rounded-lg h-12 w-48 items-center flex space-x-4 pl-6">
             <FontAwesomeIcon
               icon={faPen}
               style={{ color: "#ffffff" }}
