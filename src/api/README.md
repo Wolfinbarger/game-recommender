@@ -1,16 +1,47 @@
 # Python Documentation
 
 ## Overview
-We are using [FastAPI](https://fastapi.tiangolo.com/) to build our API to serve our core Game Recommender application. To serve this API, we are using [Uvicorn](https://www.uvicorn.org/).
+We are using the Django Python framework to serve API requests from our client and interact
+with our PostgreSQL database through it's ORM.
 
 ## How to run locally
-Install required modules:
+Note: All the following commands should be executed from the ./src/api directory.
+
+Install required modules: (See dependencies section below for more information)
 `pip install --user -r requirements.txt`
 
-Start API server: `uvicorn main:app --reload`
+Setup PostgreSQL Database (Assumes you already have PostgreSQL installed)
+Use the built-in Postgres CLI tool to create the new database
+`createdb game-recommender`
 
-Open `http://127.0.0.1:8000/` in your browser to test.
+Copy the pg service conf file to your home directory.
+`cp ./api/.pg_service.conf ~/`
 
-## Swagger
-FastAPI auto generates Swagger docs at the `/docs` endpoint.
-`http://127.0.0.1:8000/docs`
+Use the built-in Postgres CLI tool to create a new user.
+`createuser --interactive`
+
+Use this as reference for answering the prompts
+`
+Enter name of role to add: USER
+Shall the new role be a superuser? (y/n) y
+`
+
+Run migrations: `python manage.py migrate`
+Start API server: `python manage.py runserver`
+
+## Testing Locally
+You can confirm that the app is running properly by using these endpoints.
+
+Note: Our `/api/games/fake` endpoint does not query the database.
+- `http://127.0.0.1:8000/api/games/fake`
+- `http://127.0.0.1:8000/api/games`
+
+## Create Admin User
+`python manage.py createsuperuser`
+Admin portal: http://127.0.0.1:8000/admin/
+
+## Dependencies
+- [Django](https://www.djangoproject.com/)
+  - [Using PostgreSQL with Django](https://docs.djangoproject.com/en/4.2/ref/databases/#postgresql-notes)
+- [PostgreSQL](https://www.postgresql.org/)
+- [Psycopg3](https://www.psycopg.org/psycopg3/) for interacting with PostgreSQL
