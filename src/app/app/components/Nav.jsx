@@ -1,5 +1,5 @@
 import Image from "next/image";
-import logo from "../assets/img/logo.jpg";
+import logo from "../../assets/img/logo.jpg";
 import Avatar from "./Avatar";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
