@@ -20,11 +20,9 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en" className={roboto.className}>
-      <body>
-        <Nav />
-        {children}
-        <Footer />
-      </body>
+      <Nav />
+      <body>{children}</body>
+      <Footer />
     </html>
   );
 }
