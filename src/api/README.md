@@ -32,9 +32,7 @@ Start API server: `python manage.py runserver`
 ## Testing Locally
 You can confirm that the app is running properly by using these endpoints.
 
-Note: Our `/api/games/fake` endpoint does not query the database.
-- `http://127.0.0.1:8000/api/games/fake`
-- `http://127.0.0.1:8000/api/games`
+- GET `http://127.0.0.1:8000/api/games`
 
 ## Create Admin User
 `python manage.py createsuperuser`
