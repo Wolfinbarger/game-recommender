@@ -5,14 +5,7 @@
 html {
   height: 100%;
   width: 100%;
-}
-
-footer {
-  height: 10vh;
-  align-items: center;
-  border-top: 0.1em solid white;
-  background-color: #252525;
-  margin-top: auto;
+  color: white;
 }
 
 body {
@@ -22,5 +15,12 @@ body {
   display: flex;
   flex-direction: column;
   font-size: 1.25rem;
-  color: white;
+}
+
+footer {
+  height: 10vh;
+  align-items: center;
+  border-top: 0.1em solid white;
+  background-color: #252525;
+  margin-top: auto;
 }
