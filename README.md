@@ -18,7 +18,7 @@ This project is a full stack application built using the following technologies.
 * [Figma](https://www.figma.com/) - Prototyping
 
 ## How to run this project locally
-This project is seperated into 3 distinct area, each with their own README and instructions.
+This project is seperated into 3 distinct areas, each with their own README and instructions.
 * APP (Next.js) => src/api/README.md
 * API (Django) => src/app/README.md
 * Data => data/README.md
