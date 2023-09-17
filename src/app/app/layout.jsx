@@ -1,7 +1,7 @@
-import "./globals.css";
+import "./globals.scss";
 import { Inter } from "next/font/google";
-import Footer from "../components/Footer";
-import Nav from "../components/Nav";
+import Footer from "../components/footer/Footer";
+import Nav from "../components/nav/Nav";
 import "@fortawesome/fontawesome-svg-core/styles.css";
 import { config } from "@fortawesome/fontawesome-svg-core";
 import { Roboto } from "next/font/google";
@@ -20,9 +20,11 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en" className={roboto.className}>
-      <Nav />
-      <body>{children}</body>
-      <Footer />
+      <body>
+        <Nav />
+        {children}
+        <Footer />
+      </body>
     </html>
   );
 }
