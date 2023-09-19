@@ -2,7 +2,7 @@ import "./nav.scss";
 import Avatar from "../avatar/Avatar";
 
 import Image from "next/image";
-import logo from "../../assets/img/logo.jpg";
+import logo from "../../../assets/img/logo.jpg";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
   faHouse,
