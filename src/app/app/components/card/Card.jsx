@@ -8,7 +8,7 @@ import {
 import { faSteam } from "@fortawesome/free-brands-svg-icons";
 import "./card.scss";
 
-export default function Card() {
+export default function Card(game) {
   return (
     <div className="card">
       <img
@@ -17,7 +17,7 @@ export default function Card() {
       />
       <div className="content">
         <header>
-          <h2>Game Title</h2>
+          <h2>{game.value.title}</h2>
           <ul className="card-header-icons">
             <li>
               <FontAwesomeIcon
@@ -40,7 +40,8 @@ export default function Card() {
           </div>
           <div className="review-score">
             <FontAwesomeIcon icon={faChartSimple} />
-            <p>Review Score 8.1</p>
+
+            <p>Review Score {game.value["review_score"]}</p>
           </div>
         </div>
         <div className="description">

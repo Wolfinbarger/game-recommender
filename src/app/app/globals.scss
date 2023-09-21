@@ -31,8 +31,10 @@ nav {
 }
 
 main {
+  height: calc(100vh - 100px);
   grid-column: span 2;
   padding: 4% 3%;
+  overflow: scroll;
 }
 
 footer {
