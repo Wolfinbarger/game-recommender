@@ -1,9 +1,9 @@
-import Games from "@/components/Games";
+import Card from "./components/card/Card.jsx";
 
 export default function Home() {
   return (
     <main>
-      <Games />
+      <Card />
     </main>
   );
 }
