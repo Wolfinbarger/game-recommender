@@ -1,1 +1,1 @@
-localhost:5432:game-recommender:xwolf:PASSWORD
+localhost:5432:game-recommender:USER:PASSWORD
