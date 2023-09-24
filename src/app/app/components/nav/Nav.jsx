@@ -1,6 +1,8 @@
+import "./nav.scss";
+import Avatar from "../avatar/Avatar";
+
 import Image from "next/image";
-import logo from "../assets/img/logo.jpg";
-import Avatar from "./Avatar";
+import logo from "../../../assets/img/logo.jpg";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
   faHouse,
@@ -12,11 +14,11 @@ import {
 const Nav = () => {
   return (
     <>
-      <nav className="h-screen w-60 pt-16 pb-0 flex-col bg-secondary border-r border-black shadow-black">
+      <nav>
         <Image src={logo} alt="logo" className="pl-7" />
 
-        <ul className="w-48 mt-12 mb-96 pl-7">
-          <li className=" hover:bg-primary rounded-lg h-12 w-48 items-center flex space-x-4 pl-6">
+        <ul>
+          <li>
             <FontAwesomeIcon
               icon={faHouse}
               style={{ color: "#ffffff" }}
@@ -24,7 +26,7 @@ const Nav = () => {
             />
             <p>Home</p>
           </li>
-          <li className=" hover:bg-primary rounded-lg h-12 w-48 items-center flex space-x-4 pl-6">
+          <li>
             <FontAwesomeIcon
               icon={faMagnifyingGlass}
               style={{ color: "#ffffff" }}
@@ -32,7 +34,7 @@ const Nav = () => {
             />
             <p className="">Search</p>
           </li>
-          <li className=" hover:bg-primary rounded-lg h-12 w-48 items-center flex space-x-4 pl-6">
+          <li>
             <FontAwesomeIcon
               icon={faGamepad}
               style={{ color: "#ffffff" }}
@@ -40,7 +42,7 @@ const Nav = () => {
             />
             <p className="">My Games</p>
           </li>
-          <li className=" hover:bg-primary rounded-lg h-12 w-48 items-center flex space-x-4 pl-6">
+          <li>
             <FontAwesomeIcon
               icon={faPen}
               style={{ color: "#ffffff" }}

@@ -76,6 +76,7 @@ WSGI_APPLICATION = 'api.wsgi.application'
 
 DATABASES = {
     'default': {
+        'USER': environ["USER"],
         'ENGINE': 'django.db.backends.postgresql',
         "OPTIONS": {
             "service": "game_recommender_service",

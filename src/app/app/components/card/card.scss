@@ -1,0 +1,101 @@
+.content > header {
+  border: none;
+}
+.card {
+  background-color: #4D1E87;
+  height: 300px;
+  width:1300px;
+  display: flex;
+  justify-content: left;
+  border: none;
+  margin: 20px 30px;
+}
+
+.card > img {
+  height: 100%;
+  width: 700px;
+  left: 0;
+  border: none;
+
+}
+
+.card > ul {
+  border: none;
+}
+
+.card > ul > li {
+  border: none;
+}
+
+.content {
+  height: 100%;
+  width: auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  background-color: #4D1E87;
+  border: none;
+}
+
+.content > header {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  align-items: center;
+  border: none;
+}
+
+.content header h2 {
+  font-size: 1.8rem;
+  border: none;
+}
+
+.card-header-icons {
+  display: flex;
+  gap: 8px;
+  padding-right: 24px;
+  border: none;
+}
+
+.platforms {
+  background-color: #4D1E87;
+  border: none;
+  display: flex;
+  justify-content: end;
+  padding-right: 16px;
+  padding-bottom: 16px;
+  font-size: 1.3rem;
+}
+
+.info {
+  display: flex;
+  justify-content: start;
+  background-color: #4D1E87;
+  border: none;
+  height: 30px;
+  font-size: 1.5rem;
+}
+
+.number-players {
+  border: none;
+  background-color: #4D1E87;
+  height: 30px;
+  width: 200px;
+  justify-content: start;
+}
+
+.review-score {
+  height: 30px;
+  background-color: #4D1E87;
+  border: none;
+  width: 300px;
+  justify-content: start;
+}
+
+.description {
+  background-color: #4D1E87;
+  border: none;
+  font-size: 1.5rem;
+  width: 88%;
+  align-self: start;
+}

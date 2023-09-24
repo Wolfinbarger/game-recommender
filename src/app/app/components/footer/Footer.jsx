@@ -1,3 +1,4 @@
+import "./footer.scss";
 const Footer = () => {
   return (
     <footer className="flex flex-row justify-between px-5">
