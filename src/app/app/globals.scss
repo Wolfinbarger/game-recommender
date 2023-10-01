@@ -2,6 +2,14 @@
 @tailwind components;
 @tailwind utilities;
 
+// Global Colors
+$primary-color: #35155D;
+$primary-color-accent: #37185e;
+$secondary-color: #4D1E87;
+$secondary-color-accent: #3d166d;
+$grey-color: #252525;
+$blue-color: #0e2954;
+
 * {
   padding: 0;
   margin: 0;
@@ -14,7 +22,7 @@ html {
 }
 
 body {
-  background-image: linear-gradient(to bottom right, #35155d 50%, #0e2954);
+  background-image: linear-gradient(to bottom right, $primary-color 50%, $blue-color);
   background-repeat: no-repeat;
   background-attachment: fixed;
   min-height: 100%;
@@ -42,6 +50,6 @@ footer {
   height: 300%;
   align-items: center;
   border-top: 0.1em solid white;
-  background-color: #252525;
+  background-color: $grey-color;
   margin-top: auto;
 }
