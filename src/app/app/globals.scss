@@ -1,55 +1,35 @@
+@use "styles/variables";
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
-
-// Global Colors
-$primary-color: #35155D;
-$primary-color-accent: #37185e;
-$secondary-color: #4D1E87;
-$secondary-color-accent: #3d166d;
-$grey-color: #252525;
-$blue-color: #0e2954;
 
 * {
   padding: 0;
   margin: 0;
   box-sizing: border-box;
 }
-html {
-  height: 100%;
 
+html {
   color: white;
 }
 
 body {
-  background-image: linear-gradient(to bottom right, $primary-color 50%, $blue-color);
+  background-image: linear-gradient(to bottom right, variables.$primary-color 50%, variables.$blue-color);
   background-repeat: no-repeat;
   background-attachment: fixed;
   min-height: 100%;
-  display: grid;
-
-  grid-template-columns: 20% 3fr;
-  grid-template-rows: 1fr auto;
-}
-
-
-nav {
-  grid-column: span 1;
-  grid-row: 1 / 4;
-}
-
-main {
-  height: calc(100vh - 100px);
-  grid-column: span 2;
-  padding: 4% 3%;
-
 }
 
 footer {
-  grid-column: span 3;
-  height: 300%;
-  align-items: center;
+  height: 2rem;
   border-top: 0.1em solid white;
-  background-color: $grey-color;
-  margin-top: auto;
+  background-color: variables.$grey-color;
 }
+
+nav {
+  width: 20%;
+  height: 100%;
+  float: left;
+}
+

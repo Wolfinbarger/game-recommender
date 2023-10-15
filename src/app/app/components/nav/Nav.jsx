@@ -16,7 +16,6 @@ const Nav = () => {
     <>
       <nav>
         <Image src={logo} alt="logo" className="pl-7" />
-
         <ul>
           <li>
             <FontAwesomeIcon

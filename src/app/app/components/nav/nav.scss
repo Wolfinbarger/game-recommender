@@ -1,13 +1,13 @@
-@import "../../globals";
+@use "../../styles/variables";
 
 nav {
-  background-color: $primary-color-accent;
+  background-color: variables.$primary-color-accent;
   padding-top: 10% ;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
   height: 100%;
-  border-right: 1px solid $secondary-color-accent;
+  border-right: 1px solid variables.$secondary-color-accent;
   position: sticky;
 }
 
@@ -29,7 +29,7 @@ li {
   border-radius: 4px;
 
   &:hover {
-    background-color: $secondary-color;
+    background-color: variables.$secondary-color;
     cursor: pointer;
   }
 }
