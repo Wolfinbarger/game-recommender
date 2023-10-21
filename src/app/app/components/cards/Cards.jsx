@@ -27,9 +27,6 @@ const Cards = () => {
         }
     };
 
-    /**
-     * useEffect to trigger the `fetchImages` function whenever `page` updates
-     */
     useEffect(() => {
         fetchCard();
     }, []);
@@ -53,14 +50,5 @@ const Cards = () => {
         </>
     );
 };
-
-// export async function getStaticProps() {
-//     return {
-//         props: {
-//             Card
-//         },
-//         revalidate: 10
-//     }
-// }
 
 export default Cards

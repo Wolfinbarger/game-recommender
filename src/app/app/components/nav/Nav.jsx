@@ -15,7 +15,7 @@ const Nav = () => {
   return (
     <>
       <nav>
-        <Image src={logo} alt="logo" className="pl-7" />
+        <Image src={logo} alt="logo"/>
         <ul>
           <li>
             <FontAwesomeIcon

@@ -11,14 +11,12 @@
   justify-content: left;
   border: none;
   margin: 20px 30px;
-  //overflow: hidden;
 }
 
 .card > img {
   width: 30%;
   left: 0;
   border: none;
-
 }
 
 .card > ul {
@@ -30,7 +28,6 @@
 }
 
 .content {
-  //height: 100%;
   width: auto;
   display: flex;
   flex-direction: column;
@@ -74,15 +71,14 @@
   justify-content: start;
   background-color: variables.$secondary-color;
   border: none;
-  height: 30px;
   font-size: 1.5rem;
 }
 
 .number-players {
   border: none;
   background-color: variables.$secondary-color;
-  height: 30px;
-  width: 200px;
+  padding-left: 1rem;
+  padding-right: 2.5rem;
   justify-content: start;
 }
 

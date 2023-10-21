@@ -12,6 +12,9 @@
 }
 
 .avatar-icon {
+  display: flex;
+  justify-content: center;
+  align-items: center;
   background-color: white;
   height: 2em;
   width: 2em;
