@@ -1,5 +1,3 @@
-'use client'
-
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faPaperPlane, faUser } from "@fortawesome/free-regular-svg-icons";
 import {
@@ -10,7 +8,7 @@ import {
 import { faSteam } from "@fortawesome/free-brands-svg-icons";
 import "./card.scss";
 
-export default function Card() {
+export default function Card({num}) {
   return (
     <div className="card">
       <img
@@ -19,7 +17,7 @@ export default function Card() {
       />
       <div className="content">
         <header>
-          <h2>Game Title</h2>
+          <h2>Game Title #{num}</h2>
           <ul className="card-header-icons">
             <li>
               <FontAwesomeIcon
