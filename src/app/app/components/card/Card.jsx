@@ -1,3 +1,5 @@
+'use client'
+
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faPaperPlane, faUser } from "@fortawesome/free-regular-svg-icons";
 import {
@@ -7,8 +9,30 @@ import {
 } from "@fortawesome/free-solid-svg-icons";
 import { faSteam } from "@fortawesome/free-brands-svg-icons";
 import "./card.scss";
+import {useEffect, useRef} from "react";
 
-export default function Card(game) {
+export default function Card() {
+  /**
+   * Select the Card component with useRef
+   */
+  // const cardRef = useRef();
+
+  /**
+   * Implement Intersection Observer to check if the last Card in the array is visible on the screen, then set a new limit
+   */
+  // useEffect(() => {
+  //   if (!cardRef?.current) return;
+  //
+  //   const observer = new IntersectionObserver(([entry]) => {
+  //     if (isLast && entry.isIntersecting) {
+  //       newLimit();
+  //       observer.unobserve(entry.target);
+  //     }
+  //   });
+  //
+  //   observer.observe(cardRef.current);
+  // }, [isLast]);
+
   return (
     <div className="card">
       <img

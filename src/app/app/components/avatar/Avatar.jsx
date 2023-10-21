@@ -7,7 +7,7 @@ import React from "react";
 const Avatar = () => {
   return (
     <>
-      <div>
+      <div className="avatar">
         <div className="avatar-icon">
           <FontAwesomeIcon icon={faUser} style={{ color: "#000000" }} />
         </div>

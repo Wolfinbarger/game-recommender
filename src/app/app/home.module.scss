@@ -9,6 +9,9 @@
   width: 80%;
   height: 100%;
   float: right;
+  overflow: hidden;
+  scroll-behavior: smooth;
+  overflow-y: scroll;
 }
 
 
