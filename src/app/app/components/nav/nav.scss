@@ -1,11 +1,13 @@
+@import "../../globals";
+
 nav {
-  background-color: #37185e;
+  background-color: $primary-color-accent;
   padding-top: 10% ;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
   height: 100%;
-  border-right: 1px solid #3d166d;
+  border-right: 1px solid $secondary-color-accent;
   position: sticky;
 }
 
@@ -27,7 +29,7 @@ li {
   border-radius: 4px;
 
   &:hover {
-    background-color: #4D1E87;
+    background-color: $secondary-color;
     cursor: pointer;
   }
 }
