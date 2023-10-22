@@ -1,12 +1,12 @@
-@import "../../globals";
+@use "../../styles/variables";
 
 .content > header {
   border: none;
 }
 .card {
-  background-color: $secondary-color;
-  height: 300px;
-  width:1300px;
+  background-color: variables.$secondary-color;
+  height: 30%;
+  width: 90%;
   display: flex;
   justify-content: left;
   border: none;
@@ -14,11 +14,9 @@
 }
 
 .card > img {
-  height: 100%;
-  width: 700px;
+  width: 30%;
   left: 0;
   border: none;
-
 }
 
 .card > ul {
@@ -30,12 +28,11 @@
 }
 
 .content {
-  height: 100%;
   width: auto;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  background-color: $secondary-color;
+  background-color: variables.$secondary-color;
   border: none;
 }
 
@@ -60,7 +57,7 @@
 }
 
 .platforms {
-  background-color: $secondary-color;
+  background-color: variables.$secondary-color;
   border: none;
   display: flex;
   justify-content: end;
@@ -72,30 +69,29 @@
 .info {
   display: flex;
   justify-content: start;
-  background-color: $secondary-color;
+  background-color: variables.$secondary-color;
   border: none;
-  height: 30px;
   font-size: 1.5rem;
 }
 
 .number-players {
   border: none;
-  background-color: $secondary-color;
-  height: 30px;
-  width: 200px;
+  background-color: variables.$secondary-color;
+  padding-left: 1rem;
+  padding-right: 2.5rem;
   justify-content: start;
 }
 
 .review-score {
   height: 30px;
-  background-color: $secondary-color;
+  background-color: variables.$secondary-color;
   border: none;
   width: 300px;
   justify-content: start;
 }
 
 .description {
-  background-color: $secondary-color;
+  background-color: variables.$secondary-color;
   border: none;
   font-size: 1.5rem;
   width: 88%;

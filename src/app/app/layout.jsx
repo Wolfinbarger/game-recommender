@@ -1,4 +1,5 @@
 import "./globals.scss";
+import styles from "./home.module.scss";
 import Footer from "./components/footer/Footer";
 import Nav from "./components/nav/Nav";
 import "@fortawesome/fontawesome-svg-core/styles.css";
@@ -20,8 +21,10 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en" className={roboto.className}>
       <body>
+      <div className={styles.content}>
         <Nav />
         {children}
+      </div>
         <Footer />
       </body>
     </html>

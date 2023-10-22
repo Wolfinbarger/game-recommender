@@ -1,11 +1,9 @@
-@import "../../globals";
+@use "../../styles/variables";
 
 footer {
-  grid-column: span 3;
-
   height: 300%;
   align-items: center;
   border-top: 0.1em solid white;
-  background-color: $grey-color;
+  background-color: variables.$grey-color;
   margin-top: auto;
 }

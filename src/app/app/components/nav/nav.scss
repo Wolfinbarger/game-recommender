@@ -1,13 +1,12 @@
-@import "../../globals";
+@use "../../styles/variables";
 
 nav {
-  background-color: $primary-color-accent;
-  padding-top: 10% ;
+  background-color: variables.$primary-color-accent;
+  padding-top: 4rem;
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
-  height: 100%;
-  border-right: 1px solid $secondary-color-accent;
+  align-items: center;
+  border-right: 1px solid variables.$secondary-color-accent;
   position: sticky;
 }
 
@@ -15,21 +14,18 @@ nav ul {
   margin-top: 15%;
   margin-bottom: auto;
   padding-left: 15%;
-
 }
 
 li {
   display: flex;
-  gap: 3%;
+  gap: 1rem;
   align-items: center;
   justify-items: center;
-  font-size:1.5em;
-  padding-left: 3%;
-  width: 70%;
+  font-size: 1.5em;
   border-radius: 4px;
 
   &:hover {
-    background-color: $secondary-color;
+    background-color: variables.$secondary-color;
     cursor: pointer;
   }
 }

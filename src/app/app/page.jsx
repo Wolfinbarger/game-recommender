@@ -1,9 +1,10 @@
-import Card from "./components/card/Card.jsx";
+import styles from "./home.module.scss";
+import Cards from "./components/cards/Cards.jsx";
 
 export default function Home() {
   return (
-    <main>
-      <Card />
-    </main>
+      <div className={styles.main}>
+          <Cards />
+      </div>
   );
 }
