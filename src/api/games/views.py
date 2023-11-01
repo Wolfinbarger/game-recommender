@@ -1,7 +1,10 @@
-from json import JSONDecoder
 from django.http import JsonResponse, HttpResponse, HttpResponseBadRequest
 from django.core.paginator import Paginator
 from .models import Game
+
+from django.utils.module_loading import import_module
+igdb = import_module("services.igdb")
+
 
 # Constants
 OBJECTS_PER_PAGE = 10
@@ -28,6 +31,12 @@ def index(request):
         return generate_http_400_response("Query parameter 'page' missing.")
 
     data = [game.to_json() for game in page]
+
+    # Enrich game data from database with IGDB data
+    # igdb_api = igdb.IGDB()
+    # for game in data:
+    #     igdb_search_results = igdb_api.search(game.title)
+    #     print(igdb_search_results[0].get('id'))
 
     # Ref: https://docs.djangoproject.com/en/4.2/ref/request-response/#jsonresponse-objects
     return JsonResponse({"page_number": page_number, "num_of_objects": OBJECTS_PER_PAGE, "data": data})
