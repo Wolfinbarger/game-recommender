@@ -125,99 +125,99 @@ class Game(models.Model):
 
 class IGDBGame(models.Model):
     # The IGDB id of the game
-    id = models.IntegerField(primary_key=True)
+    id = models.IntegerField(primary_key=True, db_column='igdb_game_id')
     # The aggregated rating of the game
-    aggregated_rating = ArrayField(base_field=models.IntegerField, null=True, blank=True)
+    aggregated_rating = ArrayField(base_field=models.IntegerField, null=True, blank=True, db_column='igdb_game_aggregated_rating')
     # The amount of ratings the game has received
-    aggregated_rating_count = models.IntegerField(null=True, blank=True)
+    aggregated_rating_count = models.IntegerField(null=True, blank=True, db_column='igdb_game_aggregated_rating_count')
     # The alternative names of the game
-    alternative_names = ArrayField(base_field=models.IntegerField, null=True, blank=True)
+    alternative_names = ArrayField(base_field=models.IntegerField, null=True, blank=True, db_column='igdb_game_alternative_names')
     # The artworks associated with the game
-    artworks = ArrayField(base_field=models.IntegerField, null=True, blank=True)
+    artworks = ArrayField(base_field=models.IntegerField, null=True, blank=True, db_column='igdb_game_artworks')
     # The bundles that include the game
-    bundles = ArrayField(base_field=models.IntegerField, null=True, blank=True)
+    bundles = ArrayField(base_field=models.IntegerField, null=True, blank=True, db_column='igdb_game_bundles')
     # The category of the game
-    category = models.IntegerField(null=True, blank=True)
+    category = models.IntegerField(null=True, blank=True, db_column='igdb_game_category')
     # The checksum of the game
-    checksum = models.UUIDField(null=True, blank=True)
+    checksum = models.UUIDField(null=True, blank=True, db_column='igdb_game_checksum')
     # The collection that the game belongs to
-    collection = ArrayField(base_field=models.IntegerField, null=True, blank=True)
+    collection = ArrayField(base_field=models.IntegerField, null=True, blank=True, db_column='igdb_game_collection')
     # The cover image of the game
-    cover = models.IntegerField(null=True, blank=True)
+    cover = models.IntegerField(null=True, blank=True, db_column='igdb_game_cover')
     # The creation date of the game
-    created_at = models.IntegerField(null=True, blank=True)
+    created_at = models.IntegerField(null=True, blank=True, db_column='igdb_game_created_at')
     # The DLCs and expansions of the game
-    dlcs = ArrayField(base_field=models.IntegerField, null=True, blank=True)
+    dlcs = ArrayField(base_field=models.IntegerField, null=True, blank=True, db_column='igdb_game_dlcs')
     # The external games linked to the game
-    external_games = ArrayField(base_field=models.IntegerField, null=True, blank=True)
+    external_games = ArrayField(base_field=models.IntegerField, null=True, blank=True, db_column='igdb_game_external_games')
     # The first release date of the game
-    first_release_date = models.IntegerField(null=True, blank=True)
+    first_release_date = models.IntegerField(null=True, blank=True, db_column='igdb_game_first_release_date')
     # The follows count of the game
-    follows = models.IntegerField(null=True, blank=True)
+    follows = models.IntegerField(null=True, blank=True, db_column='igdb_game_follows')
     # The franchises that the game belongs to
-    franchises = ArrayField(base_field=models.IntegerField, null=True, blank=True)
+    franchises = ArrayField(base_field=models.IntegerField, null=True, blank=True, db_column='igdb_game_franchises')
     # The game engines used by the game
-    game_engines = ArrayField(base_field=models.IntegerField, null=True, blank=True)
+    game_engines = ArrayField(base_field=models.IntegerField, null=True, blank=True, db_column='igdb_game_game_engines')
     # The game modes available in the game
-    game_modes = ArrayField(base_field=models.IntegerField, null=True, blank=True)
+    game_modes = ArrayField(base_field=models.IntegerField, null=True, blank=True, db_column='igdb_game_game_modes')
     # The genres of the game
-    genres = ArrayField(base_field=models.IntegerField, null=True, blank=True)
+    genres = ArrayField(base_field=models.IntegerField, null=True, blank=True, db_column='igdb_game_genres')
     # The Hypescore of the game
-    hypes = models.IntegerField(null=True, blank=True)
+    hypes = models.IntegerField(null=True, blank=True, db_column='igdb_game_hypes')
     # The involved companies in the game
-    involved_companies = ArrayField(base_field=models.IntegerField, null=True, blank=True)
+    involved_companies = ArrayField(base_field=models.IntegerField, null=True, blank=True, db_column='igdb_game_involved_companies')
     # The keywords associated with the game
-    keywords = ArrayField(base_field=models.IntegerField, null=True, blank=True)
+    keywords = ArrayField(base_field=models.IntegerField, null=True, blank=True, db_column='igdb_game_keywords')
     # The multiplayer modes available in the game
-    multiplayer_modes = ArrayField(base_field=models.IntegerField, null=True, blank=True)
+    multiplayer_modes = ArrayField(base_field=models.IntegerField, null=True, blank=True, db_column='igdb_game_multiplayer_modes')
     # The name of the game
-    name = models.CharField(max_length=255, null=True, blank=True)
+    name = models.CharField(max_length=255, null=True, blank=True, db_column='igdb_game_name')
     # The parent game of the game
-    parent_game = models.IntegerField(null=True, blank=True)
+    parent_game = models.IntegerField(null=True, blank=True, db_column='igdb_game_parent_game')
     # The platforms that the game is released on
-    platforms = ArrayField(base_field=models.IntegerField, null=True, blank=True)
+    platforms = ArrayField(base_field=models.IntegerField, null=True, blank=True, db_column='igdb_game_platforms')
     # The player perspectives of the game
-    player_perspectives = ArrayField(base_field=models.IntegerField, null=True, blank=True)
+    player_perspectives = ArrayField(base_field=models.IntegerField, null=True, blank=True, db_column='igdb_game_player_perspectives')
     # The rating of the game
-    rating = models.FloatField(null=True, blank=True)
+    rating = models.FloatField(null=True, blank=True, db_column='igdb_game_rating')
     # The amount of ratings the game has received
-    rating_count = models.IntegerField(null=True, blank=True)
+    rating_count = models.IntegerField(null=True, blank=True, db_column='igdb_game_rating_count')
     # The release dates of the game
-    release_dates = ArrayField(base_field=models.IntegerField, null=True, blank=True)
+    release_dates = ArrayField(base_field=models.IntegerField, null=True, blank=True, db_column='igdb_game_release_dates')
     # The screenshots of the game
-    screenshots = ArrayField(base_field=models.IntegerField, null=True, blank=True)
+    screenshots = ArrayField(base_field=models.IntegerField, null=True, blank=True, db_column='igdb_game_screenshots')
     # The similar games to the game
-    similar_games = ArrayField(base_field=models.IntegerField, null=True, blank=True)
+    similar_games = ArrayField(base_field=models.IntegerField, null=True, blank=True, db_column='igdb_game_similar_games')
     # The slug of the game
-    slug = models.SlugField(max_length=255, null=True, blank=True)
+    slug = models.SlugField(max_length=255, null=True, blank=True, db_column='igdb_game_slug')
     # The standalone expansions of the game
-    standalone_expansions = ArrayField(base_field=models.IntegerField, null=True, blank=True)
+    standalone_expansions = ArrayField(base_field=models.IntegerField, null=True, blank=True, db_column='igdb_game_standalone_expansions')
     # The status of the game
-    status = models.IntegerField(null=True, blank=True)
+    status = models.IntegerField(null=True, blank=True, db_column='igdb_game_status')
     # The storylines of the game
-    storylines = models.TextField(null=True, blank=True)
+    storylines = models.TextField(null=True, blank=True, db_column='igdb_game_storylines')
     # The summary of the game
-    summary = models.TextField(null=True, blank=True)
+    summary = models.TextField(null=True, blank=True, db_column='igdb_game_summary')
     # The tags of the game
-    tags = ArrayField(base_field=models.IntegerField, null=True, blank=True)
+    tags = ArrayField(base_field=models.IntegerField, null=True, blank=True, db_column='igdb_game_tags')
     # The themes of the game
-    themes = ArrayField(base_field=models.IntegerField, null=True, blank=True)
+    themes = ArrayField(base_field=models.IntegerField, null=True, blank=True, db_column='igdb_game_themes')
     # The total rating of the game
-    total_rating = models.FloatField(null=True, blank=True)
+    total_rating = models.FloatField(null=True, blank=True, db_column='igdb_game_total_rating')
     # The amount of total ratings the game has received
-    total_rating_count = models.IntegerField(null=True, blank=True)
+    total_rating_count = models.IntegerField(null=True, blank=True, db_column='igdb_game_total_rating_count')
     # The update date of the game
-    updated_at = models.IntegerField(null=True, blank=True)
+    updated_at = models.IntegerField(null=True, blank=True, db_column='igdb_game_updated_at')
     # The URL of the game
-    url = models.URLField(max_length=255, null=True, blank=True)
+    url = models.URLField(max_length=255, null=True, blank=True, db_column='igdb_game_url')
     # The version parent of the game
-    version_parent = models.IntegerField(null=True, blank=True)
+    version_parent = models.IntegerField(null=True, blank=True, db_column='igdb_game_version_parent')
     # The version title of the game
-    version_title = models.CharField(max_length=255, null=True, blank=True)
+    version_title = models.CharField(max_length=255, null=True, blank=True, db_column='igdb_game_version_title')
     # The videos associated with the game
-    videos = ArrayField(base_field=models.IntegerField, null=True, blank=True)
+    videos = ArrayField(base_field=models.IntegerField, null=True, blank=True, db_column='igdb_game_videos')
     # The websites of the game
-    websites = ArrayField(base_field=models.IntegerField, null=True, blank=True)
+    websites = ArrayField(base_field=models.IntegerField, null=True, blank=True, db_column='igdb_game_websites')
 
     def __str__(self):
         return self.to_json().__str__()
