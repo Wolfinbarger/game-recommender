@@ -1,0 +1,9 @@
+@use "../../styles/variables";
+
+footer {
+  height: 300%;
+  align-items: center;
+  border-top: 0.1em solid white;
+  background-color: variables.$grey-color;
+  margin-top: auto;
+}
