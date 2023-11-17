@@ -1,15 +1,10 @@
-import "./global.scss";
-import styles from "./home.module.scss";
-import Footer from "./components/footer/Footer";
-import Nav from "./components/nav/Nav";
-import Cards from "./components/cards/Cards";
+import React from "react";
+import Layout from "./components/Layout/Layout";
 
 function App() {
   return (
     <>
-      <Nav />
-      <Cards />
-      <Footer />
+      <Layout></Layout>
     </>
   );
 }

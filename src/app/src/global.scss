@@ -17,16 +17,18 @@ body {
   background-repeat: no-repeat;
   background-attachment: fixed;
   min-height: 100%;
+  display: grid;
+  grid-template-columns: 20% 3fr;
+  grid-template-rows: 1fr auto;
 }
 
-footer {
-  height: 2rem;
-  border-top: 0.1em solid white;
-  background-color: variables.$grey-color;
-}
+// footer {
+//   height: 2rem;
+//   border-top: 0.1em solid white;
+//   background-color: variables.$grey-color;
+// }
 
 nav {
-  width: 15%;
-  height: 100%;
-  float: left;
+  grid-column: span 1;
+  grid-row: 1 / 4;
 }
