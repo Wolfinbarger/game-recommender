@@ -20,6 +20,11 @@ body {
   display: grid;
   grid-template-columns: 20% 3fr;
   grid-template-rows: 1fr auto;
+
+  //Accessibility standards from Web Content Accessibility Standards
+  font-size: 18px;
+  line-height: 1.5;
+  letter-spacing: 0.05em;
 }
 
 // footer {
