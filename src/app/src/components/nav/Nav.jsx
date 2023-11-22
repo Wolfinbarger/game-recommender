@@ -22,7 +22,7 @@ const Nav = () => {
               style={{ color: "#ffffff" }}
               fixedWidth
             />
-            <p>Home</p>
+            Homes
           </li>
           <li>
             <FontAwesomeIcon
@@ -30,7 +30,7 @@ const Nav = () => {
               style={{ color: "#ffffff" }}
               fixedWidth
             />
-            <p className="">Search</p>
+            Search
           </li>
           <li>
             <FontAwesomeIcon
@@ -38,7 +38,7 @@ const Nav = () => {
               style={{ color: "#ffffff" }}
               fixedWidth
             />
-            <p className="">My Games</p>
+            My Games
           </li>
           <li>
             <FontAwesomeIcon
@@ -46,7 +46,7 @@ const Nav = () => {
               style={{ color: "#ffffff" }}
               fixedWidth
             />
-            <p className="">Wishlist</p>
+            Wishlist
           </li>
         </ul>
 

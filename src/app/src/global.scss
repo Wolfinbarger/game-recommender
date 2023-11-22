@@ -27,6 +27,11 @@ body {
   letter-spacing: 0.05em;
 }
 
+p {
+  text-align: left;
+  min-width: 45ch;
+  max-width: 85ch;
+}
 // footer {
 //   height: 2rem;
 //   border-top: 0.1em solid white;
