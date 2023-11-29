@@ -6,8 +6,6 @@ import Card from "../card/Card";
 import styles from "./cards.module.scss";
 import InfiniteScroll from "react-infinite-scroll-component";
 
-import Layout from "../Layout/Layout";
-
 const Cards = () => {
   // There's an issue with infinite scroll where if no cards are defined initially, then it only renders one card,
   // which doesn't enable scrolling in the component. Without scrolling, the infinite scroll component will not call
