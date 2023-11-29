@@ -7,19 +7,23 @@
   box-sizing: border-box;
 }
 
+
+
 html {
   color: white;
   font-family: variables.$primary-font;
+  overflow-block: hidden;
+
 }
 
 body {
   background-image: linear-gradient(to bottom right, variables.$primary-color 50%, variables.$blue-color);
   background-repeat: no-repeat;
   background-attachment: fixed;
-  min-height: 100%;
-  display: grid;
-  grid-template-columns: 20% 3fr;
-  grid-template-rows: 1fr auto;
+  // min-height: 100%;
+  // display: grid;
+  // grid-template-columns: 20% 3fr;
+  // grid-template-rows: 1fr auto;
 
   //Accessibility standards from Web Content Accessibility Standards
   font-size: 18px;
@@ -38,7 +42,7 @@ p {
 //   background-color: variables.$grey-color;
 // }
 
-nav {
-  grid-column: span 1;
-  grid-row: 1 / 4;
-}
+// nav {
+//   grid-column: span 1;
+//   grid-row: 1 / 4;
+// }

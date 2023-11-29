@@ -1,11 +1,12 @@
 // Ref link: https://nextjs.org/docs/app/building-your-application/rendering/client-components
-"use client";
 
 import React, { useEffect, useState } from "react";
 import Card from "../card/Card";
 
 import styles from "./cards.module.scss";
 import InfiniteScroll from "react-infinite-scroll-component";
+
+import Layout from "../Layout/Layout";
 
 const Cards = () => {
   // There's an issue with infinite scroll where if no cards are defined initially, then it only renders one card,
@@ -53,6 +54,7 @@ const Cards = () => {
           loader={<p>Loading...</p>}
           endMessage={<p>No more data to load.</p>}
           scrollableTarget="scrollableDiv"
+          style={{ overflow: "hidden" }}
         >
           {cards.map((card) => (
             <div key={card.id}>

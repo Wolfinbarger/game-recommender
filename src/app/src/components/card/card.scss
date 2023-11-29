@@ -2,6 +2,7 @@
 
 .content > header {
   border: none;
+  overflow-x: hidden;
 }
 .card {
   background-color: variables.$secondary-color;
