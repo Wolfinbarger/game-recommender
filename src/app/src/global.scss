@@ -20,10 +20,6 @@ body {
   background-image: linear-gradient(to bottom right, variables.$primary-color 50%, variables.$blue-color);
   background-repeat: no-repeat;
   background-attachment: fixed;
-  // min-height: 100%;
-  // display: grid;
-  // grid-template-columns: 20% 3fr;
-  // grid-template-rows: 1fr auto;
 
   //Accessibility standards from Web Content Accessibility Standards
   font-size: 18px;
@@ -36,13 +32,3 @@ p {
   min-width: 45ch;
   max-width: 85ch;
 }
-// footer {
-//   height: 2rem;
-//   border-top: 0.1em solid white;
-//   background-color: variables.$grey-color;
-// }
-
-// nav {
-//   grid-column: span 1;
-//   grid-row: 1 / 4;
-// }
