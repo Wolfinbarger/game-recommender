@@ -44,14 +44,13 @@ const Cards = () => {
 
   return (
     <>
-      <div id="scrollableDiv" className={styles.cards}>
+      <section className={styles.cards}>
         <InfiniteScroll
           dataLength={cards.length}
           next={fetchCard}
           hasMore={true}
           loader={<p>Loading...</p>}
           endMessage={<p>No more data to load.</p>}
-          scrollableTarget="scrollableDiv"
           style={{ overflow: "hidden" }}
         >
           {cards.map((card) => (
@@ -61,7 +60,7 @@ const Cards = () => {
           ))}
         </InfiniteScroll>
         {error && <p>Error: {error.message}</p>}
-      </div>
+      </section>
     </>
   );
 };
