@@ -9,6 +9,7 @@ import { faSteam } from "@fortawesome/free-brands-svg-icons";
 import "./card.scss";
 
 export default function Card({ num }) {
+  console.log(num);
   return (
     <div className="card">
       <img

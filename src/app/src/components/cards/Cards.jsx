@@ -1,12 +1,45 @@
 // Ref link: https://nextjs.org/docs/app/building-your-application/rendering/client-components
 
-import React, { useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import Card from "../card/Card";
 
 import styles from "./cards.module.scss";
 import InfiniteScroll from "react-infinite-scroll-component";
 
+function useData() {
+  const [data, setData] = useState(null);
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState(null);
+
+  useEffect(() => {
+    fetch("http://127.0.0.1:8000/api/games/?page=1")
+      .then((res) => {
+        console.log(res);
+        if (!res.ok) {
+          throw new Error(`This is an HTTP error: The status is ${res.status}`);
+        }
+        console.log(res);
+        return res.json();
+      })
+      .then((data) => {
+        console.log(data);
+        setData(data);
+        setLoading(false);
+      })
+      .catch((err) => {
+        setError(err);
+        setLoading(false);
+      });
+  }, []);
+  console.log(data);
+  return JSON.stringify(data);
+}
+
 const Cards = () => {
+  const data = useData();
+  const gamesData = JSON.parse(data);
+
+  //console.log(data);
   // There's an issue with infinite scroll where if no cards are defined initially, then it only renders one card,
   // which doesn't enable scrolling in the component. Without scrolling, the infinite scroll component will not call
   // fetchCard.
@@ -54,9 +87,7 @@ const Cards = () => {
           style={{ overflow: "hidden" }}
         >
           {cards.map((card) => (
-            <div key={card.id}>
-              <Card num={card.id} />
-            </div>
+            <Card key={"card_" + card.id} num={card.id} />
           ))}
         </InfiniteScroll>
         {error && <p>Error: {error.message}</p>}
