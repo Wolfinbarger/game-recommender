@@ -6,94 +6,71 @@ import Card from "../card/Card";
 import styles from "./cards.module.scss";
 import InfiniteScroll from "react-infinite-scroll-component";
 
-function useData() {
-  const [data, setData] = useState(null);
+const BASE_URL = "http://localHost:8000/api/games/?page";
+
+export default function Cards() {
+  const [cards, setCards] = useState([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
+  const [page, setPage] = useState(1);
 
-  useEffect(() => {
-    fetch("http://127.0.0.1:8000/api/games/?page=1")
-      .then((res) => {
-        console.log(res);
-        if (!res.ok) {
-          throw new Error(`This is an HTTP error: The status is ${res.status}`);
-        }
-        console.log(res);
-        return res.json();
-      })
-      .then((data) => {
-        console.log(data);
-        setData(data);
-        setLoading(false);
-      })
-      .catch((err) => {
-        setError(err);
-        setLoading(false);
-      });
-  }, []);
-  console.log(data);
-  return JSON.stringify(data);
-}
-
-const Cards = () => {
-  const data = useData();
-  const gamesData = JSON.parse(data);
-
-  //console.log(data);
-  // There's an issue with infinite scroll where if no cards are defined initially, then it only renders one card,
-  // which doesn't enable scrolling in the component. Without scrolling, the infinite scroll component will not call
-  // fetchCard.
-  // TODO: We should look into a better way to handle this, since this might not be enough cards for a large screen.
-  const initialCardState = [
-    { id: 1 },
-    { id: 2 },
-    { id: 3 },
-    { id: 4 },
-    { id: 5 },
-  ];
-  const [cards, setCard] = useState(initialCardState);
-  const [isLoading, setIsLoading] = useState(false);
-  const [error, setError] = useState(null);
-  const [page, setPage] = useState(initialCardState.length);
-
-  // This function is called by infinite scroll when the user is near the bottom of the scrollable area. It
-  // mocks fetching a card and updates the state.
-  // TODO: Update this function to receive real cards from our database.
-  const fetchCard = () => {
-    const result = { id: page };
+  const fetchData = async (url) => {
     try {
-      setCard((prev) => [...prev, result]);
-      setPage((prevPage) => prevPage + 1);
-    } catch (error) {
-      setError(error);
-    } finally {
-      setIsLoading(false);
+      const response = await fetch(url);
+      if (!response.ok) {
+        throw new Error(`HTTP error: The status is ${response.status}`);
+      }
+      const data = await response.json();
+      return data;
+    } catch (err) {
+      throw new Error(`Error fetching data: ${err.message}`);
     }
   };
 
   useEffect(() => {
-    fetchCard();
-  }, []);
+    const fetchInitialData = async () => {
+      try {
+        setLoading(true);
+        const initialData = await fetchData(`${BASE_URL}=${page}`);
+        setCards(initialData.data);
+      } catch (err) {
+        setError(err);
+      } finally {
+        setLoading(false);
+      }
+    };
+
+    fetchInitialData();
+  }, [page]);
+
+  const fetchMoreData = async () => {
+    try {
+      setLoading(true);
+      const newData = await fetchData(`${BASE_URL}=${page + 1}`);
+      setCards((prevCards) => [...prevCards, ...newData.data]);
+      setPage((prevPage) => prevPage + 1);
+    } catch (err) {
+      setError(err);
+    } finally {
+      setLoading(false);
+    }
+  };
 
   return (
-    <>
-      <section className={styles.cards}>
-        <InfiniteScroll
-          dataLength={cards.length}
-          next={fetchCard}
-          hasMore={true}
-          loader={<p>Loading...</p>}
-          endMessage={<p>No more data to load.</p>}
-          style={{ overflow: "hidden" }}
-        >
-          {cards.map((card) => (
-            <Card key={"card_" + card.id} num={card.id} />
-          ))}
-        </InfiniteScroll>
-        {error && <p>Error: {error.message}</p>}
-      </section>
-    </>
+    <section className={styles.cards}>
+      <InfiniteScroll
+        dataLength={cards.length}
+        next={fetchMoreData}
+        hasMore={!loading && cards.length < (cards.num_of_objects || Infinity)}
+        loader={<p>Loading...</p>}
+        endMessage={<p>No more data to load.</p>}
+        style={{ overflow: "hidden" }}
+      >
+        {cards.map((card) => (
+          <Card key={`card_${card.id}`} game={card} />
+        ))}
+      </InfiniteScroll>
+      {error && <p>Error: {error.message}</p>}
+    </section>
   );
-};
-
-export default Cards;
+}
