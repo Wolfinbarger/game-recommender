@@ -1,0 +1,34 @@
+@use "styles/variables";
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+
+
+html {
+  color: white;
+  font-family: variables.$primary-font;
+
+
+}
+
+body {
+  background-image: linear-gradient(to bottom right, variables.$primary-color 50%, variables.$blue-color);
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+
+  //Accessibility standards from Web Content Accessibility Standards
+  font-size: 18px;
+  line-height: 1.5;
+  letter-spacing: 0.05em;
+}
+
+p {
+  text-align: left;
+  min-width: 45ch;
+  max-width: 85ch;
+}

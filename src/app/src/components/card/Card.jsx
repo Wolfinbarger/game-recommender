@@ -8,7 +8,8 @@ import {
 import { faSteam } from "@fortawesome/free-brands-svg-icons";
 import "./card.scss";
 
-export default function Card({num}) {
+export default function Card({ game }) {
+  console.log(game);
   return (
     <div className="card">
       <img
@@ -17,7 +18,9 @@ export default function Card({num}) {
       />
       <div className="content">
         <header>
-          <h2>Game Title #{num}</h2>
+          <h2>
+            {game.title} #{game.id}
+          </h2>
           <ul className="card-header-icons">
             <li>
               <FontAwesomeIcon

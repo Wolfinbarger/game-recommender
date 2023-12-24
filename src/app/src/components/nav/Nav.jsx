@@ -1,8 +1,7 @@
 import "./nav.scss";
 import Avatar from "../avatar/Avatar";
 
-import Image from "next/image";
-import logo from "../../../assets/img/logo.jpg";
+import logo from "../../assets/img/logo.jpg";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
   faHouse,
@@ -15,7 +14,7 @@ const Nav = () => {
   return (
     <>
       <nav>
-        <Image src={logo} alt="logo"/>
+        <img src={logo} alt="logo" />
         <ul>
           <li>
             <FontAwesomeIcon
@@ -23,7 +22,7 @@ const Nav = () => {
               style={{ color: "#ffffff" }}
               fixedWidth
             />
-            <p>Home</p>
+            Homes
           </li>
           <li>
             <FontAwesomeIcon
@@ -31,7 +30,7 @@ const Nav = () => {
               style={{ color: "#ffffff" }}
               fixedWidth
             />
-            <p className="">Search</p>
+            Search
           </li>
           <li>
             <FontAwesomeIcon
@@ -39,7 +38,7 @@ const Nav = () => {
               style={{ color: "#ffffff" }}
               fixedWidth
             />
-            <p className="">My Games</p>
+            My Games
           </li>
           <li>
             <FontAwesomeIcon
@@ -47,7 +46,7 @@ const Nav = () => {
               style={{ color: "#ffffff" }}
               fixedWidth
             />
-            <p className="">Wishlist</p>
+            Wishlist
           </li>
         </ul>
 

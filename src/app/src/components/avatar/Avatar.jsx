@@ -2,7 +2,7 @@ import "./avatar.scss";
 
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faUser } from "@fortawesome/free-regular-svg-icons";
-import React from "react";
+// import React from "react";
 
 const Avatar = () => {
   return (
