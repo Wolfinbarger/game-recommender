@@ -2,11 +2,11 @@
 #
 # Building a New Image:
 #   Switch to the src/api directory, then run the command:
-#       docker build -t game-recommender .
+#       docker build -t freakynoblegas/game-recommender:latest .
 #
 # Running Image:
 #   Switch to the project's root directory where the .env file exists, then run the command:
-#       docker run --env-file=.env -p 8000:8000 game-recommender
+#       docker run --env-file=.env -p 8000:8000 freakynoblegas/game-recommender:latest
 #
 # Pushing a New Image:
 #   After confirming that the new image is running as expected, push the new image with the command:
@@ -27,7 +27,9 @@ COPY . .
 
 # Install the dependencies
 RUN pip3 install psycopg2-binary
-RUN pip3 install -r requirements.txt
+# Running the app locally doesn't require the binary version of psycopg2. This line removes that dependency while
+# installing everything else.
+RUN pip3 install $(awk '!/psycopg2/' requirements.txt)
 
 # Django server port
 EXPOSE 8000
