@@ -29,9 +29,17 @@ Shall the new role be a superuser? (y/n) y
 Run migrations: `python manage.py migrate`
 Start API server: `python manage.py runserver`
 
-## Testing Locally
-You can confirm that the app is running properly by using these endpoints.
+## Running from Docker container
+The API service can be run locally by either building a new image or running a previously built image. If you would
+like to build a new image, please see the instructions at the top of the Dockerfile in this directory.
 
+If you just need to run the latest image, do the following:
+- Confirm you are in the project's root directory with the .env file.
+- Run: `docker pull freakynoblegas/game-recommender:latest`
+- Run: `docker run --env-file=.env -p 8000:8000 freakynoblegas/game-recommender:latest`
+- 
+## Testing Locally
+You can confirm that the app is running properly by using this endpoint:
 - GET `http://127.0.0.1:8000/api/games`
 
 ## Create Admin User

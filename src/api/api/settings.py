@@ -74,18 +74,25 @@ TEMPLATES = [
 
 WSGI_APPLICATION = 'api.wsgi.application'
 
+# DOCKER_ENABLED is set in the Dockerfile
+if 'DOCKER_ENABLED' in environ:
+    host = "host.docker.internal"
+else:
+    host = "localhost"
 
-# Database
+# PASSWORD is optional for setting up Postgresql DB
+if "PASSWORD" not in environ:
+    environ["PASSWORD"] = ""
+
 # https://docs.djangoproject.com/en/4.2/ref/settings/#databases
-
 DATABASES = {
-    'default': {
-        'USER': environ["USER"],
-        'ENGINE': 'django.db.backends.postgresql',
-        "OPTIONS": {
-            "service": "game_recommender_service",
-            "passfile": ".my_pgpass",
-        },
+    "default": {
+        "ENGINE": "django.db.backends.postgresql",
+        "NAME": "game-recommender",
+        "USER": environ["USER"],
+        "PASSWORD": environ["PASSWORD"],
+        "HOST": host,
+        "PORT": "5432",
     }
 }
 
