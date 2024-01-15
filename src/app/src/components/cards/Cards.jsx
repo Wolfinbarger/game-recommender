@@ -3,10 +3,10 @@
 import { useEffect, useState } from "react";
 import Card from "../card/Card";
 
-import styles from "./cards.module.scss";
+import "./cards.scss";
 import InfiniteScroll from "react-infinite-scroll-component";
 
-const BASE_URL = "http://localHost:8000/api/games?page";
+const BASE_URL = "http://127.0.0.1:8000/api/games?page";
 
 export default function Cards() {
   const [cards, setCards] = useState([]);
@@ -57,7 +57,7 @@ export default function Cards() {
   };
 
   return (
-    <section className={styles.cards}>
+    <section className="cards">
       <InfiniteScroll
         dataLength={cards.length}
         next={fetchMoreData}

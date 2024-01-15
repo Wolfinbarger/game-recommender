@@ -9,7 +9,6 @@ import { faSteam } from "@fortawesome/free-brands-svg-icons";
 import "./card.scss";
 
 export default function Card({ game }) {
-  console.log(game);
   return (
     <div className="card">
       <img
