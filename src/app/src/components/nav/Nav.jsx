@@ -19,7 +19,7 @@ const Nav = () => {
           <li>
             <FontAwesomeIcon
               icon={faHouse}
-              style={{ color: "#ffffff" }}
+              className="font-awesome-icon"
               fixedWidth
             />
             Homes
@@ -27,7 +27,7 @@ const Nav = () => {
           <li>
             <FontAwesomeIcon
               icon={faMagnifyingGlass}
-              style={{ color: "#ffffff" }}
+              className="font-awesome-icon"
               fixedWidth
             />
             Search
@@ -35,7 +35,7 @@ const Nav = () => {
           <li>
             <FontAwesomeIcon
               icon={faGamepad}
-              style={{ color: "#ffffff" }}
+              className="font-awesome-icon"
               fixedWidth
             />
             My Games
@@ -43,7 +43,7 @@ const Nav = () => {
           <li>
             <FontAwesomeIcon
               icon={faPen}
-              style={{ color: "#ffffff" }}
+              className="font-awesome-icon"
               fixedWidth
             />
             Wishlist

@@ -7,13 +7,9 @@
   box-sizing: border-box;
 }
 
-
-
 html {
   color: white;
   font-family: variables.$primary-font;
-
-
 }
 
 body {
@@ -21,7 +17,7 @@ body {
   background-repeat: no-repeat;
   background-attachment: fixed;
 
-  //Accessibility standards from Web Content Accessibility Standards
+  // Accessibility standards from Web Content Accessibility Standards
   font-size: 18px;
   line-height: 1.5;
   letter-spacing: 0.05em;

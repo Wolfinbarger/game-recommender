@@ -1,5 +1,9 @@
 @use "../../styles/variables";
 
+.font-awesome-icon {
+  color: variables.$white-color
+}
+
 nav {
   background-color: variables.$primary-color-accent;
   padding-top: 4rem;

@@ -4,6 +4,7 @@
   border: none;
   overflow-x: hidden;
 }
+
 .card {
   background-color: variables.$secondary-color;
   height: 30%;
@@ -48,6 +49,7 @@
 .content header h2 {
   font-size: 1.8rem;
   border: none;
+  padding-left: 1rem;
 }
 
 .card-header-icons {
@@ -72,21 +74,27 @@
   justify-content: start;
   background-color: variables.$secondary-color;
   border: none;
-  font-size: 1.5rem;
+  font-size: 1rem;
+  padding-left: 1rem;
 }
 
 .number-players {
+  display: flex;
+  align-items: center;
   border: none;
   background-color: variables.$secondary-color;
-  padding-left: 1rem;
+  gap: 0.5rem;
   padding-right: 2.5rem;
   justify-content: start;
 }
 
 .review-score {
+  display: flex;
+  align-items: center;
   height: 30px;
   background-color: variables.$secondary-color;
   border: none;
+  gap: 0.5rem;
   width: 300px;
   justify-content: start;
 }
@@ -94,7 +102,8 @@
 .description {
   background-color: variables.$secondary-color;
   border: none;
-  font-size: 1.5rem;
+  font-size: 1rem;
+  padding-left: 1rem;
   width: 88%;
   align-self: start;
 }

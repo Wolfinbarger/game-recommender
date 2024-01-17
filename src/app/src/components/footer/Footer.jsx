@@ -8,4 +8,6 @@ const Footer = () => {
   );
 };
 
+// TODO: Render footer if the browser is loading the next set of games
+// https://github.com/Wolfinbarger/game-recommender/issues/57
 export default Footer;
