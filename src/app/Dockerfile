@@ -19,22 +19,22 @@ FROM node:18.17.0
 WORKDIR /app
 
 # Copy package.json and package-lock.json to the working directory
-COPY package*.json ./
+COPY package.json yarn.lock vite.config.js babel.config.cjs ./
 
 # Install app dependencies
-RUN npm install
+RUN yarn install
 
 # Copy all the app directory files
 COPY . .
 
 # Expose the port that the app runs on
-EXPOSE 3000
+EXPOSE 5173
 
-# Define environment variable
-ENV REACT_APP_API_URL=http://localhost:5000
+# # Define environment variable
+# ENV REACT_APP_API_URL=http://localhost:5000
 
-# Build the app
-RUN vite build
+# # Build the app
+# RUN vite build
 
 # Command to run the app
-CMD ["yarn", "start"]
+CMD ["yarn", "dev"]
