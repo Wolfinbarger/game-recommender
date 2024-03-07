@@ -6,7 +6,7 @@
 #
 # Running Image:
 #   Switch to the project's root directory where the .env file exists, then run the command:
-#       docker run --env-file=.env -p 8000:8000 freakynoblegas/game-recommender:latest
+#       docker run -p 5176:5173 frontend/game-recommender:latest
 #
 # Pushing a New Image:
 #   After confirming that the new image is running as expected, push the new image with the command:
