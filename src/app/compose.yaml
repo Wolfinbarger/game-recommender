@@ -1,18 +1,19 @@
 services:
-  backend:
-    image: freakynoblegas/game-recommender:latest
-    ports:
-      - "8000:8000"
-    networks:
-      - game-recommender-network
-
   frontend:
     image: frontend/game-recommender:latest
     ports:
       - "5173:5173"
     networks:
-      - game-recommender-network
+      - default
 
+  backend:
+    image: freakynoblegas/game-recommender:latest
+    ports:
+      - "8000:8000"
+    env_file:
+      - ./.env
+    networks:
+      - default
 networks:
-  game-recommender-network:
+  default:
     driver: bridge

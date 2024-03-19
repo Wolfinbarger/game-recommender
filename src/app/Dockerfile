@@ -2,15 +2,15 @@
 #
 # Building a New Image:
 #   Switch to the src/app directory, then run the command:
-#       docker build -t frontend/game-recommender:latest .
+#       docker build -t frontend-game-recommender .
 #
 # Running Image:
 #   Switch to the project's root directory where the .env file exists, then run the command:
-#       docker run -p 5176:5173 frontend/game-recommender:latest
+#       docker run -p 5173:5173 frontend-game-recommender
 #
 # Pushing a New Image:
 #   After confirming that the new image is running as expected, push the new image with the command:
-#       docker push freakynoblegas/game-recommender:latest
+#       docker push freakynoblegas/game-recommender
 
 # Use an official Node 18.17.0
 FROM node:18.17.0
@@ -23,6 +23,12 @@ COPY package.json yarn.lock vite.config.js babel.config.cjs ./
 
 # Install app dependencies
 RUN yarn install
+
+# Build app
+RUN yarn build
+
+# Change directory to build
+WORKDIR  /dist
 
 # Copy all the app directory files
 COPY . .

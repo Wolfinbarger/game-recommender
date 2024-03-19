@@ -6,7 +6,7 @@ import Card from "../card/Card";
 import styles from "./cards.module.scss";
 import InfiniteScroll from "react-infinite-scroll-component";
 
-const BASE_URL = "http://localHost:8000/api/games?page";
+const BASE_URL = "http://localhost:8000/api/games?page=";
 
 export default function Cards() {
   const [cards, setCards] = useState([]);
