@@ -2,6 +2,7 @@
 
 import { useEffect, useState } from "react";
 import Card from "../card/Card";
+import Footer from "../footer/Footer";
 
 import styles from "./cards.module.scss";
 import InfiniteScroll from "react-infinite-scroll-component";
@@ -62,7 +63,7 @@ export default function Cards() {
         dataLength={cards.length}
         next={fetchMoreData}
         hasMore={!loading && cards.length < (cards.num_of_objects || Infinity)}
-        loader={<p>Loading...</p>}
+        loader=<Footer />
         endMessage={<p>No more data to load.</p>}
         style={{ overflow: "hidden" }}
       >
