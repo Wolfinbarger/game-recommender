@@ -63,8 +63,8 @@ export default function Cards() {
         dataLength={cards.length}
         next={fetchMoreData}
         hasMore={!loading && cards.length < (cards.num_of_objects || Infinity)}
-        loader=<Footer />
-        endMessage={<p>No more data to load.</p>}
+        loader={<p> Loading... </p>}
+        endMessage={<Footer />}
         style={{ overflow: "hidden" }}
       >
         {cards.map((card) => (
