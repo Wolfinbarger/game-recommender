@@ -2,11 +2,14 @@
 
 import { useEffect, useState } from "react";
 import Card from "../card/Card";
+import Footer from "../footer/Footer";
 
-import styles from "./cards.module.scss";
+import "./cards.scss";
 import InfiniteScroll from "react-infinite-scroll-component";
 
-const BASE_URL = "http://localhost:8000/api/games?page=";
+
+const BASE_URL = "http://127.0.0.1:8000/api/games?page";
+
 
 export default function Cards() {
   const [cards, setCards] = useState([]);
@@ -57,13 +60,13 @@ export default function Cards() {
   };
 
   return (
-    <section className={styles.cards}>
+    <section className="cards">
       <InfiniteScroll
         dataLength={cards.length}
         next={fetchMoreData}
         hasMore={!loading && cards.length < (cards.num_of_objects || Infinity)}
-        loader={<p>Loading...</p>}
-        endMessage={<p>No more data to load.</p>}
+        loader={<p> Loading... </p>}
+        endMessage={<Footer />}
         style={{ overflow: "hidden" }}
       >
         {cards.map((card) => (

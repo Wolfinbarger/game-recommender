@@ -11,7 +11,7 @@ In our project's future state, they can also read reviews, watch trailers, and c
 Our dataset uses multiple data sources, such as datasets on Kaggle, official store APIs, and custom web scrapers.
 
 This project is a full stack application built using the following technologies.
-* [Next.js](https://nextjs.org/) - Front-end
+* [React](https://react.dev/) - Front-end
 * [Tailwind](https://tailwindcss.com/) & [SCSS](https://sass-lang.com/) - Styling
 * [Django](https://www.djangoproject.com/) - Back-end
 * [PostgreSQL](https://www.postgresql.org/) - Database
