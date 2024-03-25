@@ -1,5 +1,5 @@
 @use "styles/variables";
-@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Roboto&display=swap");
 
 * {
   padding: 0;
@@ -13,7 +13,11 @@ html {
 }
 
 body {
-  background-image: linear-gradient(to bottom right, variables.$primary-color 50%, variables.$blue-color);
+  background-image: linear-gradient(
+    to bottom right,
+    variables.$primary-color 50%,
+    variables.$blue-color
+  );
   background-repeat: no-repeat;
   background-attachment: fixed;
 
