@@ -71,6 +71,7 @@ export default function Cards() {
           <Card key={`card_${card.id}`} game={card} />
         ))}
       </InfiniteScroll>
+
       {error && <p>Error: {error.message}</p>}
     </section>
   );
