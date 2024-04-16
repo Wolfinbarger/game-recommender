@@ -1,4 +1,7 @@
 {
+  "moduleNameMapper": {
+    "^.+\\.(css|less|scss)$": "babel-jest"
+  },
   "collectCoverageFrom": [
     "**/*.{js,jsx}",
     "!**/node_modules/**",
