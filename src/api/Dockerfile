@@ -23,7 +23,7 @@ ENV DOCKER_ENABLED="enabled"
 WORKDIR /app
 
 # Copy all of the API directory files
-COPY . .
+COPY ../api-old .
 
 # Install the dependencies
 RUN pip3 install psycopg2-binary
