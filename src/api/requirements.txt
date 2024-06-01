@@ -1,0 +1,6 @@
+sqlmodel==0.0.18
+fastapi==0.111.0
+python-dotenv==1.0.1
+alembic==1.13.1
+psycopg2==2.9.9
+requests==2.31.0

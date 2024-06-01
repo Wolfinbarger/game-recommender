@@ -11,9 +11,9 @@ load_dotenv("../../.env")
 
 # DOCKER_ENABLED is set in the Dockerfile
 if 'DOCKER_ENABLED' in environ:
-    host = "host.docker.internal"
+    DB_HOST = "host.docker.internal"
 else:
-    host = "localhost"
+    DB_HOST = "localhost"
 
 # PASSWORD is optional for setting up Postgresql DB
 if "PASSWORD" not in environ:
@@ -26,9 +26,9 @@ app = FastAPI()
 DB_NAME = "game-recommender"
 USER = environ["USER"]
 PASSWORD = environ["PASSWORD"]
-# PORT = "5432"
-SQLALCHEMY_DATABASE_URL = f"postgresql://{USER}:{PASSWORD}@localhost/{DB_NAME}"
 
+SQLALCHEMY_DATABASE_URL = f"postgresql://{USER}:{PASSWORD}@{DB_HOST}/{DB_NAME}"
+print(SQLALCHEMY_DATABASE_URL)
 engine = create_engine(SQLALCHEMY_DATABASE_URL)
 SessionLocal = sessionmaker(autocommit = False, autoflush = False, bind = engine)
 
