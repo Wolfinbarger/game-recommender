@@ -2,18 +2,14 @@
 # Description: Parses and creates new records from our datasets.
 #
 import os
-import django
 from dotenv import load_dotenv
 import pandas as pd
+from models import Game, Platform
+from database import Database
 
-# Set the DJANGO_SETTINGS_MODULE environment variable
-os.environ['DJANGO_SETTINGS_MODULE'] = 'api.settings'
 load_dotenv("../../.env")
 
-# Set up the Django environment
-django.setup()
-from games.models import Game, Platform, Multiplayer
-
+db = Database()
 
 def parse_platforms(platforms):
     platforms = platforms.replace(",", "").split()
@@ -40,24 +36,21 @@ def parse_gamespot_dataset():
     """
     gamespot_data = pd.read_csv("../../data/gamespot_dataset.csv")
 
-    for platforms, title, review, score in gamespot_data.values:
-        fields = parse_platforms(platforms)
-        platform = Platform(**fields)
-        platform.save()
+    with db.create_session() as session:
+        for platforms, title, review, score in gamespot_data.values:
+            fields = parse_platforms(platforms)
+            # Create Platform object from fields using sqlmodel
+            platform = Platform(**fields)
+            session.add(platform)
 
-        multiplayer = Multiplayer()
-        multiplayer.save()
+            game = Game(
+                title = title,
+                platform = platform,
+                review_score = score
+            )
+            session.add(game)
 
-        remove_review_index = title.find(" Review")
-        title = title[0:remove_review_index]
-
-        game = Game(
-            title=title,
-            platform=platform,
-            multiplayer=multiplayer,
-            review_score=score
-        )
-        game.save()
+        session.commit()
 
 
 def main():

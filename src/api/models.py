@@ -1,12 +1,8 @@
 from sqlalchemy import Column
-from sqlmodel import SQLModel, Field, Relationship
-from sqlmodel import JSON
+from sqlmodel import SQLModel, Field, Relationship, JSON
 from typing import Optional, Dict
 from datetime import date
 from typing import List
-#from sqlalchemy.ext.declarative import declarative_base
-
-#Base = declarative_base()
 
 
 def to_json(items):
