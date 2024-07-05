@@ -1,0 +1,25 @@
+services:
+  backend:
+    build: ./src/api
+    container_name: backend
+    image: freakynoblegas/game-recommender:latest
+    ports:
+      - "8000:8000"
+    env_file:
+      - ./.env
+    networks:
+      - game-recommender-network
+
+  frontend:
+    build: ./src/app
+    container_name: frontend
+    image: freakynoblegas/game-recommender:frontend
+    ports:
+      - "5173:5173"
+    networks:
+      - game-recommender-network
+
+
+networks:
+  game-recommender-network:
+    driver: bridge
