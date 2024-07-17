@@ -1,0 +1,25 @@
+{
+  "moduleNameMapper": {
+    "^.+\\.(css|less|scss)$": "babel-jest"
+  },
+  "collectCoverageFrom": [
+    "**/*.{js,jsx}",
+    "!**/node_modules/**",
+    "!**/coverage/**",
+    "!vite.config.js"
+  ],
+  "coverageThreshold": {
+    "global": {
+      "branches": 0,
+      "functions": 0,
+      "lines": 0,
+      "statements": 0
+    },
+    "./src/components": {
+      "branches": 0,
+      "functions": 0,
+      "lines": 0,
+      "statements": 0
+    }
+  }
+}
