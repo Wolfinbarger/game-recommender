@@ -205,3 +205,6 @@ build/
 
 ### uv (Python package manager) ###
 uv.lock
+
+### AI Integrations
+.claude/
