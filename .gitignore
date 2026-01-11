@@ -190,3 +190,21 @@ thumb
 sketch
 
 # End of https://www.toptal.com/developers/gitignore/api/python,react
+
+### SvelteKit ###
+# Build output
+.svelte-kit/
+build/
+
+# Bun
+.bun/
+
+# Other SvelteKit artifacts
+.vercel/
+.netlify/
+
+### uv (Python package manager) ###
+uv.lock
+
+### AI Integrations
+.claude/

@@ -1,39 +1,48 @@
-# Description: This Dockerfile builds the image for the API server.
+# Dockerfile for FastAPI Backend
 #
-# Building a New Image:
-#   Switch to the src/api directory, then run the command:
-#       docker build -t freakynoblegas/game-recommender:api-latest .
+# This builds a Docker image for the Game Recommender API server.
+# The API uses FastAPI, SQLModel, and uv for dependency management.
 #
-# Running Image:
-#   Switch to the project's root directory where the .env file exists, then run the command:
-#       docker run --env-file=.env -p 8000:8000 -p 5432:5432 freakynoblegas/game-recommender:api-latest
+# Building the image:
+#   cd src/api
+#   docker build -t game-recommender-api .
 #
-# Pushing a New Image:
-#   After confirming that the new image is running as expected, push the new image with the command:
-#       docker push freakynoblegas/game-recommender:api-latest
+# Running the container:
+#   docker run -p 8000:8000 game-recommender-api
+#
+# Or use docker-compose.yml from the root directory (recommended):
+#   docker compose up
 
-# Use Python 3.9.18 as the base image
-FROM python:3.9.18-slim-bookworm
+# Use Python 3.11 slim image as base
+# Slim images are smaller and have fewer dependencies
+FROM python:3.11-slim
 
-# Used to let the app know which host to use for the database connection
-ENV DOCKER_ENABLED=true
-
-# Set the working directory to /app. This automatically creates the app directory in the container and
-# cd's to this directory.
+# Set working directory to /app
+# All subsequent commands will run from this directory
 WORKDIR /app
 
-# Copy API source code
+# Copy dependency files first
+# This allows Docker to cache the dependency layer
+# if only code changes (not dependencies)
+COPY pyproject.toml ./
+
+# Install uv (fast Python package manager)
+# Then install all project dependencies
+RUN pip install uv && \
+    uv pip install --system -r pyproject.toml
+
+# Copy the rest of the application code
 COPY . .
 
-# Install the dependencies
-RUN pip3 install psycopg2-binary
+# Make the entrypoint script executable
+# This script runs migrations before starting the server
+RUN chmod +x entrypoint.sh
 
-# Running the app locally doesn't require the binary version of psycopg2. This line removes that dependency while
-# installing everything else.
-RUN pip3 install $(awk '!/psycopg2/' requirements.txt)
-
-# FastAPI server port
+# Expose port 8000 for the FastAPI server
 EXPOSE 8000
 
-# Run the FastAPI server when the container starts
-CMD ["fastapi", "run", "main.py", "--port", "8000"]
+# Run the entrypoint script when container starts
+# This will:
+# 1. Run Alembic migrations (alembic upgrade head)
+# 2. Start the FastAPI server (uvicorn)
+CMD ["./entrypoint.sh"]

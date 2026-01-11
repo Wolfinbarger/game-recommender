@@ -1,12 +1,28 @@
 services:
-  backend:
-    build: ./src/api
-    container_name: backend
-    image: freakynoblegas/game-recommender:latest
+  # PostgreSQL Database
+  # Stores all game data, user preferences, etc.
+  db:
+    image: postgres:15-alpine
+    container_name: game-recommender-db
+    restart: unless-stopped
+    environment:
+      # Database credentials
+      # IMPORTANT: Change these in production!
+      POSTGRES_DB: game_recommender
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: postgres
     ports:
-      - "8000:8000"
-    env_file:
-      - ./.env
+      # Expose PostgreSQL so you can connect with tools like pgAdmin
+      - "5432:5432"
+    volumes:
+      # Persist database data so it survives container restarts
+      - postgres_data:/var/lib/postgresql/data
+    healthcheck:
+      # Check if database is ready before starting backend
+      test: ["CMD-SHELL", "pg_isready -U postgres"]
+      interval: 5s
+      timeout: 5s
+      retries: 5
     networks:
       - game-recommender-network
 
@@ -16,10 +32,39 @@ services:
     image: freakynoblegas/game-recommender:frontend
     ports:
       - "5173:5173"
+    environment:
+      # Set the backend API URL using Docker service name
+      # The frontend container will use this to connect to the backend
+      # 'backend' is the service name defined below
+      PUBLIC_API_URL: http://localhost:8000
     networks:
       - game-recommender-network
 
+  backend:
+    build: ./src/api
+    container_name: backend
+    image: freakynoblegas/game-recommender:latest
+    ports:
+      - "8000:8000"
+    environment:
+      # Database connection string for Docker
+      # Format: postgresql://user:password@host:port/database
+      # 'db' is the database service name defined above
+      DATABASE_URL: postgresql://postgres:postgres@db:5432/game_recommender
+    env_file:
+      - ./.env
+    depends_on:
+      db:
+        # Wait for database to be healthy before starting backend
+        condition: service_healthy
+    networks:
+      - game-recommender-network
 
 networks:
   game-recommender-network:
     driver: bridge
+
+# Named volumes for persistent data storage
+volumes:
+  postgres_data:
+    driver: local

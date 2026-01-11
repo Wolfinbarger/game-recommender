@@ -1,0 +1,58 @@
+# Python Project Configuration for Game Recommender API
+#
+# This file defines the project's Python dependencies using uv package manager.
+#
+# To install dependencies: uv sync --no-install-project
+# To add a new package: uv add package-name
+# To run the app: uv run uvicorn main:app --reload
+
+[project]
+name = "game-recommender-api"
+version = "1.0.0"
+description = "FastAPI backend for the Game Recommender application"
+requires-python = ">=3.9"
+authors = [
+    { name = "Nick Quinn" },
+    { name = "X'Zaiver Wolfinbarger" }
+]
+readme = "README.md"
+
+# Core dependencies needed to run the application
+dependencies = [
+    # SQLModel: Combines SQLAlchemy and Pydantic for database models
+    # Makes it easy to define database tables with type hints
+    "sqlmodel==0.0.18",
+
+    # FastAPI: Modern web framework for building APIs
+    # Provides automatic API documentation, validation, and more
+    "fastapi==0.111.0",
+
+    # Uvicorn: ASGI server to run FastAPI
+    # This is what actually serves your API
+    "uvicorn[standard]>=0.30.0",
+
+    # Python-dotenv: Loads environment variables from .env files
+    # Keeps sensitive data (API keys, passwords) out of code
+    "python-dotenv==1.0.1",
+
+    # Alembic: Database migration tool
+    # Helps manage database schema changes over time
+    "alembic==1.13.1",
+
+    # Psycopg2-binary: PostgreSQL adapter for Python
+    # Allows Python to communicate with PostgreSQL databases
+    # Note: Using binary version for easier installation
+    "psycopg2-binary==2.9.9",
+
+    # Requests: HTTP library for making API calls
+    # Used to communicate with external APIs like IGDB
+    "requests==2.31.0",
+
+    # Pandas: Data manipulation library
+    # Useful for processing and analyzing game data
+    "pandas==2.2.2",
+]
+
+# Optional dependency groups (not used currently)
+[dependency-groups]
+dev = []

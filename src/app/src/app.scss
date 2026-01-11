@@ -1,0 +1,87 @@
+/**
+ * Global Application Styles
+ *
+ * This file contains styles that apply to the entire application.
+ * It sets up the base styling, resets default browser styles, and
+ * creates the consistent look and feel across all pages.
+ */
+
+// Import our custom variables (colors, fonts, etc.)
+@use "lib/styles/variables";
+
+// Import the Roboto font from Google Fonts
+@import "https://fonts.googleapis.com/css2?family=Roboto&display=swap";
+
+// ============================================
+// RESET DEFAULT BROWSER STYLES
+// ============================================
+
+/**
+ * Reset all elements to have no padding or margin by default.
+ * This gives us a clean slate to work with and ensures consistent
+ * spacing across different browsers.
+ */
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box; // Makes width/height calculations easier
+}
+
+// ============================================
+// BASE HTML STYLES
+// ============================================
+
+/**
+ * Set up the base styles for the HTML element.
+ * These styles will be inherited by all elements on the page.
+ */
+html {
+  color: white; // Default text color is white (since we have a dark background)
+  font-family: variables.$primary-font; // Use our Roboto font
+}
+
+/**
+ * Body styles create the overall look of the page.
+ * We use a gradient background that goes from purple to blue.
+ */
+body {
+  /**
+   * Create a gradient background that transitions from our primary purple
+   * color in the top-left to our blue color in the bottom-right.
+   */
+  background-image: linear-gradient(
+    to bottom right,
+    variables.$primary-color 50%,
+    variables.$blue-color
+  );
+
+  /**
+   * These properties ensure the gradient covers the entire viewport
+   * and doesn't repeat or scroll with the content.
+   */
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+
+  /**
+   * Accessibility standards from Web Content Accessibility Guidelines (WCAG)
+   * These settings make text easier to read for all users.
+   */
+  font-size: 18px; // Larger than default for better readability
+  line-height: 1.5; // Spacing between lines makes text easier to read
+  letter-spacing: 0.05em; // Slight spacing between letters improves clarity
+}
+
+// ============================================
+// PARAGRAPH STYLES
+// ============================================
+
+/**
+ * Default paragraph styling.
+ * The min/max width ensures text lines aren't too short or too long,
+ * which improves readability (optimal line length is 45-85 characters).
+ */
+p {
+  text-align: left;
+  min-width: 45ch; // 'ch' is the width of the '0' character
+  max-width: 85ch;
+}

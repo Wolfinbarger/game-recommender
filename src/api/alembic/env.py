@@ -61,14 +61,30 @@ def run_migrations_online() -> None:
     In this scenario we need to create an Engine
     and associate a connection with the context.
 
+    Supports two modes:
+    1. Docker: Uses DATABASE_URL environment variable
+    2. Local: Constructs URL from USER and PASSWORD environment variables
     """
     configuration = config.get_section(config.config_ini_section)
-    configuration["sqlalchemy.url"] = configuration["sqlalchemy.url"].format(
-        getenv('USER'), getenv('PASSWORD', "")
-    )
+
+    # Check if DATABASE_URL is provided (Docker environment)
+    # This takes priority over the URL in alembic.ini
+    database_url = getenv('DATABASE_URL')
+    if database_url:
+        # Docker: Use the DATABASE_URL from environment
+        print(f"DEBUG: Using DATABASE_URL from environment")
+        configuration["sqlalchemy.url"] = database_url
+    else:
+        # Local: Format the URL from alembic.ini with USER and PASSWORD
+        print(f"DEBUG: Using alembic.ini URL with USER/PASSWORD")
+        configuration["sqlalchemy.url"] = configuration["sqlalchemy.url"].format(
+            getenv('USER'), getenv('PASSWORD', "")
+        )
+
+    print(f"DEBUG: Final database URL host: {configuration['sqlalchemy.url'].split('@')[1].split('/')[0] if '@' in configuration['sqlalchemy.url'] else 'unknown'}")
 
     connectable = engine_from_config(
-        config.get_section(config.config_ini_section, {}),
+        configuration,
         prefix="sqlalchemy.",
         poolclass=pool.NullPool,
     )
