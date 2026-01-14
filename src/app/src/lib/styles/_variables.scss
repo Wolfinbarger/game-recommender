@@ -1,0 +1,56 @@
+/**
+ * Global Style Variables
+ *
+ * This file defines all the colors and fonts used throughout the application.
+ * By centralizing these values, we can easily maintain consistent styling
+ * and make theme changes in one place.
+ */
+
+// ============================================
+// GLOBAL COLORS
+// ============================================
+
+/**
+ * Primary color - Dark purple used for main UI elements like the navbar
+ */
+$primary-color: #35155d;
+
+/**
+ * Primary color accent - Slightly lighter purple for hover states and highlights
+ */
+$primary-color-accent: #37185e;
+
+/**
+ * Secondary color - Medium purple used for cards and content areas
+ */
+$secondary-color: #4d1e87;
+
+/**
+ * Secondary color accent - Darker purple for borders and subtle highlights
+ */
+$secondary-color-accent: #3d166d;
+
+/**
+ * Grey color - Dark grey used for footer and neutral elements
+ */
+$grey-color: #252525;
+
+/**
+ * Blue color - Dark blue used in the gradient background
+ */
+$blue-color: #0e2954;
+
+/**
+ * White color - Pure white for text and icons
+ */
+$white-color: #fff;
+
+// ============================================
+// GLOBAL FONTS
+// ============================================
+
+/**
+ * Primary font - Roboto is used throughout the app for readability
+ * This is loaded from Google Fonts in the global styles
+ */
+$primary-font: "Roboto", sans-serif;
