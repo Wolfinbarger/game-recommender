@@ -208,23 +208,30 @@
   Component-specific styles.
 -->
 <style lang="scss">
-  /**
-   * Main container for all the game cards.
-   *
-   * Takes up 85% of the width, leaving 15% for the navigation sidebar.
-   * margin-left: auto pushes this section to the right side of the page.
-   */
   .cards {
-    margin-left: auto; /* Pushes to the right, leaving space for nav */
-    width: 85%; /* Takes up remaining space after 15% nav */
+    margin-left: auto; 
+    width: 85%; 
+    
+    /* 1. Remove dots if Card.svelte uses <li> tags */
+    display: flex;
+    flex-direction: column;
+    list-style: none; 
   }
 
-  /**
-   * Style for error messages.
-   * Makes errors stand out so users notice when something goes wrong.
-   */
+  /* 2. This forces any list items inside the container to hide their dots */
+  :global(.cards li) {
+    list-style-type: none !important;
+  }
+
+  /* 3. This catches any default browser padding that pushes icons to the right */
+  :global(.cards ul) {
+    padding: 0;
+    margin: 0;
+    list-style: none;
+  }
+
   .error {
-    color: #ff6b6b; /* Red color for errors */
+    color: #ff6b6b;
     padding: 1rem;
     text-align: center;
     font-weight: bold;
