@@ -69,12 +69,8 @@
       Header section with game title and action icons.
     -->
     <header>
-      <!--
-        Game title with ID number.
-        The ID is shown for debugging/reference purposes.
-      -->
       <h2>
-        {game.title} #{game.id}
+        {game.title}      
       </h2>
 
       <!--

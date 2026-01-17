@@ -37,6 +37,11 @@ services:
       # The frontend container will use this to connect to the backend
       # 'backend' is the service name defined below
       PUBLIC_API_URL: http://localhost:8000
+    volumes:
+      # Mount local source code for hot reloading
+      - ./src/app:/app
+      # Preserve node_modules from container (don't overwrite with local)
+      - /app/node_modules
     networks:
       - game-recommender-network
 
@@ -53,6 +58,10 @@ services:
       DATABASE_URL: postgresql://postgres:postgres@db:5432/game_recommender
     env_file:
       - ./.env
+    volumes:
+      # Mount local source code for hot reloading
+      - ./src/api:/app
+    command: ["bash", "./entrypoint.sh"]
     depends_on:
       db:
         # Wait for database to be healthy before starting backend
