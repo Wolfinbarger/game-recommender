@@ -10,13 +10,13 @@ Environment Variables:
 """
 
 from sqlmodel import create_engine, Session
-from sqlalchemy.orm import sessionmaker
 from os import environ
 from dotenv import load_dotenv
 
 # Load environment variables from .env file
 # This is important for local development
 load_dotenv("../../.env")
+
 
 class Database:
     """
@@ -31,10 +31,10 @@ class Database:
     def __init__(self):
         # Check if DATABASE_URL is provided (Docker environment)
         # This takes priority over individual credentials
-        if 'DATABASE_URL' in environ:
+        if "DATABASE_URL" in environ:
             # Docker: Use the full connection string from compose.yaml
             # Format: postgresql://user:password@host:port/database
-            self.db_url = environ['DATABASE_URL']
+            self.db_url = environ["DATABASE_URL"]
         else:
             # Local development: Build connection string from individual parts
             self.host = "localhost"
@@ -72,3 +72,4 @@ class Database:
             str: The database connection URL
         """
         return f"postgresql://{self.user}:{self.password}@{self.host}/{self.name}"
+

@@ -83,6 +83,7 @@
       // If we got games back, append them to the existing list
       if (response.data && response.data.length > 0) {
         $games = [...$games, ...response.data];
+        console.log($games)
 
         /**
          * Check if we've loaded all available games.
